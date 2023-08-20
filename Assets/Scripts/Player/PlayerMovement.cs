@@ -21,7 +21,7 @@ public sealed class PlayerMovement : MonoBehaviour
     {
         GetInput(out var _movementInput);
         
-        _moveVelocity = (_movementInput + _movementInput) * movingSpeed;
+        _moveVelocity = _movementInput * movingSpeed;
         _characterController.Move(_moveVelocity * Time.deltaTime);
     }
 }
