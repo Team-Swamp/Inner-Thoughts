@@ -1,6 +1,6 @@
 public abstract class BossBaseState : FiniteBaseState
 {
-    #region FiniteBaseState to BigEnemiesState
+    #region FiniteBaseState to BossBaseState
 
     public override void EnterState(FiniteStateMachine entity)
     {
