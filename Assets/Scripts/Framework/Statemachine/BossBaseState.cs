@@ -1,20 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public abstract class BossBaseState : BaseState
+public abstract class BossBaseState : FiniteBaseState
 {
-    #region BaseState to BigEnmiesState
+    #region FiniteBaseState to BigEnemiesState
 
-    public override void EnterState(StateMachine entity)
+    public override void EnterState(FiniteStateMachine entity)
     {
         base.EnterState(Parent);
         EnterState((BossStateMachine) Parent);
     }
 
-    public override void UpdateState(StateMachine entity) => UpdateState((BossStateMachine)Parent);
-    public override void FixedUpdateState(StateMachine entity) => FixedUpdateState((BossStateMachine)Parent);
-    public override void ExitState(StateMachine entity) => ExitState((BossStateMachine)Parent);
+    public override void UpdateState(FiniteStateMachine entity) => UpdateState((BossStateMachine)Parent);
+    public override void FixedUpdateState(FiniteStateMachine entity) => FixedUpdateState((BossStateMachine)Parent);
+    public override void ExitState(FiniteStateMachine entity) => ExitState((BossStateMachine)Parent);
 
     #endregion
 

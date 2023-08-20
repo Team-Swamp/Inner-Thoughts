@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class StateMachine : MonoBehaviour
+public abstract class FiniteStateMachine : MonoBehaviour
 {
-    [Header("Base StateMachine")]
-    [SerializeField] protected BaseState startingState;
-    [SerializeField] protected BaseState[] states;
-    [SerializeField] protected BaseState currentState;
+    [Header("Base FiniteStateMachine")]
+    [SerializeField] protected FiniteBaseState startingState;
+    [SerializeField] protected FiniteBaseState[] states;
+    [SerializeField] protected FiniteBaseState currentState;
 
     [SerializeField] private float removeStateQueueTime;
     
-    private readonly List<BaseState> _switchStateQueue = new List<BaseState>();
+    private readonly List<FiniteBaseState> _switchStateQueue = new List<FiniteBaseState>();
 
     protected void Awake()
     {
@@ -57,7 +57,7 @@ public abstract class StateMachine : MonoBehaviour
     /// </summary>
     /// <param name="targetState">Give target state to switch into.</param>
     /// <param name="isCalledFromExitState">If the SwitchState is called form a ExitState function, this needs to be true!</param>
-    public void SwitchState(BaseState targetState, bool isCalledFromExitState = false)
+    public void SwitchState(FiniteBaseState targetState, bool isCalledFromExitState = false)
     {
         if (!currentState.IsValidToSwitch)
         {
@@ -74,7 +74,7 @@ public abstract class StateMachine : MonoBehaviour
         targetState.EnterState(this);
     }
     
-    private IEnumerator AddStateInQueue(BaseState queueableState)
+    private IEnumerator AddStateInQueue(FiniteBaseState queueableState)
     {
         _switchStateQueue.Add(queueableState);
         Debug.Log("TargetState has been added to the state queue\n" + queueableState);
