@@ -527,9 +527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8616f3bc6b01244b07da3761748d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7382670567921211340, guid: 345f501f7da53f94e92305bf833dab85, type: 3}
+  currentGunData: {fileID: 11400000, guid: 3a6ec97f041ef07439fca2ea0f0dd1d8, type: 2}
   firePoint: {fileID: 4975914213401191704}
-  testClickPoint: {fileID: 1463379875}
 --- !u!1001 &7556792996721299379
 PrefabInstance:
   m_ObjectHideFlags: 0
