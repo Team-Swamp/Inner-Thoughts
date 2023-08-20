@@ -2,29 +2,26 @@ using UnityEngine;
 
 public sealed class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private CharacterController characterController;
     [SerializeField] private float movingSpeed;
-
-
+    
+    private CharacterController _characterController;
+    private Vector2 _movementInput;
     private Vector2 _moveDirection;
-    private float _horizontal;
-    private float _vertical;
 
-    private void Update()
-    {
-        SetInput();
-        SetMoveDirection();
-    }
+    private void Awake() => _characterController = GetComponent<CharacterController>();
 
-    private void SetInput()
+    private void FixedUpdate() => SetMoveDirection();
+
+    private void GetInput(out Vector2 input2D)
     {
-        _horizontal = Input.GetAxisRaw("Horizontal");
-        _vertical = Input.GetAxisRaw("Vertical");
+        input2D = Vector2.zero;
+        input2D = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
     private void SetMoveDirection()
     {
-        _moveDirection = (transform.right * _horizontal + transform.up * _vertical) * movingSpeed;
-        characterController.Move(_moveDirection * Time.deltaTime);
+        GetInput(out _movementInput);
+        _moveDirection = (transform.right * _movementInput + transform.up * _movementInput) * movingSpeed;
+        _characterController.Move(_moveDirection * Time.deltaTime);
     }
 }
