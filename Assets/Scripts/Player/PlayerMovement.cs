@@ -5,8 +5,7 @@ public sealed class PlayerMovement : MonoBehaviour
     [SerializeField] private float movingSpeed;
     
     private CharacterController _characterController;
-    private Vector2 _movementInput;
-    private Vector2 _moveDirection;
+    private Vector2 _moveVelocity;
 
     private void Awake() => _characterController = GetComponent<CharacterController>();
 
@@ -14,14 +13,15 @@ public sealed class PlayerMovement : MonoBehaviour
 
     private void GetInput(out Vector2 input2D)
     {
-        input2D = Vector2.zero;
-        input2D = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-    }
-
+        input2D.x = Input.GetAxisRaw("Horizontal");
+        input2D.y = Input.GetAxisRaw("Vertical");
+    } 
+    
     private void SetMoveDirection()
     {
-        GetInput(out _movementInput);
-        _moveDirection = (transform.right * _movementInput + transform.up * _movementInput) * movingSpeed;
-        _characterController.Move(_moveDirection * Time.deltaTime);
+        GetInput(out var _movementInput);
+        
+        _moveVelocity = (_movementInput + _movementInput) * movingSpeed;
+        _characterController.Move(_moveVelocity * Time.deltaTime);
     }
 }
