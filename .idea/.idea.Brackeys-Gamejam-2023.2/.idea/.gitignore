@@ -1,10 +1,10 @@
-# Default ignored files
+﻿# Default ignored files
 /shelf/
 /workspace.xml
 # Rider ignored files
-/contentModel.xml
-/.idea.Brackeys-Gamejam-2023.2.iml
 /projectSettingsUpdater.xml
+/.idea.Brackeys-Gamejam-2023.2.iml
+/contentModel.xml
 /modules.xml
 # Editor-based HTTP Client requests
 /httpRequests/
