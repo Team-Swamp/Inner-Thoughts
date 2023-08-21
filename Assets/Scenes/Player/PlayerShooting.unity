@@ -378,54 +378,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &1814153154
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1814153156}
-  - component: {fileID: 1814153155}
-  m_Layer: 0
-  m_Name: Bullet Object Pooling
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1814153155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814153154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f5a314584be6924d908c1167a379328, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 7382670567921211340, guid: 345f501f7da53f94e92305bf833dab85, type: 3}
-  bulletStartAmount: 5
-  activeBullets: []
-  inactiveBullets: []
---- !u!4 &1814153156
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814153154}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4975914213401191702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -481,7 +433,7 @@ PrefabInstance:
     - target: {fileID: 3845554638312408513, guid: bc145c1f6e2b5a14993f404ec5d6e0b6, type: 3}
       propertyPath: bulletSystem
       value: 
-      objectReference: {fileID: 1814153155}
+      objectReference: {fileID: 0}
     - target: {fileID: 6684204552474564609, guid: bc145c1f6e2b5a14993f404ec5d6e0b6, type: 3}
       propertyPath: m_Name
       value: Player
