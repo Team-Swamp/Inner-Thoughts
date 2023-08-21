@@ -27,7 +27,8 @@ public sealed class PlayerShooting : MonoBehaviour
 
     private Vector2 ShootingDirection()
     {
-        var dir = MousePosition.GetMouseWorldPosition() - firePoint.position;
+        var firePointVector2 = new Vector2(firePoint.position.x, firePoint.position.y);
+        var dir = MousePosition.GetMouseWorldPosition() - firePointVector2;
         return dir.normalized;
     }
 }
