@@ -4,7 +4,7 @@ public class Walking : SmallEnemiesBaseState
 {
     protected override void EnterState(SmallEnemiesStateMachine enemy)
     {
-        Debug.Log("");
+        
     }
 
     protected override void ExitState(SmallEnemiesStateMachine enemy) { }

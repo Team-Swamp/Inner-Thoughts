@@ -160,8 +160,8 @@ MonoBehaviour:
   - {fileID: 563876921}
   currentState: {fileID: 0}
   removeStateQueueTime: 0
-  idleState: {fileID: 563876922}
-  walkingState: {fileID: 563876921}
+  <idleState>k__BackingField: {fileID: 563876922}
+  <walkingState>k__BackingField: {fileID: 563876921}
 --- !u!114 &563876921
 MonoBehaviour:
   m_ObjectHideFlags: 0
