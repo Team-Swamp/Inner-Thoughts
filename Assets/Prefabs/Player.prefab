@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5073119246401863913}
   - component: {fileID: 3512818862568470647}
   - component: {fileID: 2473435413974780162}
+  - component: {fileID: 3845554638312408513}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -124,5 +125,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2633e3b5ecdd413489e54fcd737d7d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterController: {fileID: 3512818862568470647}
   movingSpeed: 5
+--- !u!114 &3845554638312408513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684204552474564609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665c672f2e2777c47b3254da291fff52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onHealthAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  onResurrected:
+    m_PersistentCalls:
+      m_Calls: []
+  isDead: 0
