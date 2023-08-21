@@ -19,8 +19,7 @@ public sealed class PlayerShooting : MonoBehaviour
     private void Shoot()
     {
         var currentBullet = Instantiate(currentGunData.bullet, transform.position, transform.rotation); //todo: rotation laten kloppen met de riching dat de bullet op gaat. (als de bullets niet rond zijn)
-        var bulletRB = currentBullet.GetComponent<Rigidbody2D>();
-        bulletRB.velocity = ShootingDirection() * currentGunData.shootingPower;
+        currentBullet.GetComponent<Bullet>().ActiveBullet(ShootingDirection(), currentGunData.shootingPower, "Enemy");
         
         onShoot?.Invoke();
     }
