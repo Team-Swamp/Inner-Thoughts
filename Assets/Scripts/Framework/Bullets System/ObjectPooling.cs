@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,11 +6,12 @@ public sealed class ObjectPooling : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private int bulletStartAmount;
-    [SerializeField] private List<Bullet> activeBullets = new List<Bullet>();
-    [SerializeField] private List<Bullet> inactiveBullets = new List<Bullet>();
+    private List<Bullet> activeBullets = new List<Bullet>();
+    private List<Bullet> inactiveBullets = new List<Bullet>();
+    // [SerializeField] private List<Bullet> hewuoshjio = new List<Bullet>();
 
     private void Awake() => InitObjects();
-
+    
     // bullet aan zetten
     public void StartBullet(Vector2 shootTarget, float shootingPower, string targetToHit)
     {
@@ -22,8 +24,8 @@ public sealed class ObjectPooling : MonoBehaviour
         
         Debug.Log("2 inactive: " + inactiveBullets.Count + " active: " + activeBullets.Count);
         
-        activeBullets[activeBullets.Count].gameObject.SetActive(true);
-        activeBullets[activeBullets.Count].ActiveBullet(shootTarget, shootingPower, targetToHit);
+        // Debug.Log(activeBullets);
+        activeBullets[activeBullets.Count - 1].ActiveBullet(shootTarget, shootingPower, targetToHit);
     }
     
     // bullet uit zetten

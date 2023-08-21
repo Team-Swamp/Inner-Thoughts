@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public sealed class Bullet : MonoBehaviour
@@ -21,6 +22,8 @@ public sealed class Bullet : MonoBehaviour
 
     public void ActiveBullet(Vector2 shootTarget, float shootingPower, string targetToHit)
     {
+        gameObject.SetActive(true);
+        
         _currentTargetToHit = targetToHit;
         _shootTarget = shootTarget;
 
