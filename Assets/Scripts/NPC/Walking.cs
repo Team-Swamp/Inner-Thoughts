@@ -7,18 +7,12 @@ public class Walking : SmallEnemiesBaseState
         Debug.Log("");
     }
 
-    protected override void ExitState(SmallEnemiesStateMachine enemy)
-    {
-        
-    }
+    protected override void ExitState(SmallEnemiesStateMachine enemy) { }
+    
 
-    protected override void FixedUpdateState(SmallEnemiesStateMachine enemy)
-    {
-        
-    }
+    protected override void FixedUpdateState(SmallEnemiesStateMachine enemy) { }
+    
 
-    protected override void UpdateState(SmallEnemiesStateMachine enemy)
-    {
-        
-    }
+    protected override void UpdateState(SmallEnemiesStateMachine enemy) { }
+    
 }

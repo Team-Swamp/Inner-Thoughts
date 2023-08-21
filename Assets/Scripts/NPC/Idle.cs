@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Idle : SmallEnemiesBaseState
 {
-    private float _currentWaitTime;
     [SerializeField, Range(0, 30)] private float waitTime;
+
+    private float _currentWaitTime;
 
     protected override void EnterState(SmallEnemiesStateMachine enemy)
     {
@@ -12,10 +13,8 @@ public class Idle : SmallEnemiesBaseState
         _currentWaitTime = waitTime;
     }
 
-    protected override void ExitState(SmallEnemiesStateMachine enemy)
-    {
-        
-    }
+    protected override void ExitState(SmallEnemiesStateMachine enemy) { }
+    
 
     protected override void FixedUpdateState(SmallEnemiesStateMachine enemy)
     {
@@ -24,8 +23,6 @@ public class Idle : SmallEnemiesBaseState
         if (_currentWaitTime <= 0) enemy.SwitchState(enemy.walkingState);
     }
 
-    protected override void UpdateState(SmallEnemiesStateMachine enemy)
-    {
-        
-    }
+    protected override void UpdateState(SmallEnemiesStateMachine enemy) { }
+    
 }

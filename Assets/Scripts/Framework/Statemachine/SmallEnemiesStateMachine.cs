@@ -1,7 +1,8 @@
+using UnityEngine;
 public class SmallEnemiesStateMachine : FiniteStateMachine
 {
-    public Idle idleState;
-    public Walking walkingState;
+    [HideInInspector] public Idle idleState;
+    [HideInInspector] public Walking walkingState;
 
     private new void Update() => base.Update();
 }
