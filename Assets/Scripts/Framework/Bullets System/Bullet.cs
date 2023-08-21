@@ -4,7 +4,8 @@ using UnityEngine;
 public sealed class Bullet : MonoBehaviour
 {
     [SerializeField, Range(0, 150)] private float maxTravelDistance;
-    
+
+    private ObjectPooling _objectPooling;
     private Rigidbody2D _rb;
     private string _playerTag = "Player";
     private string _enemyTag = "Enemy";
@@ -15,7 +16,7 @@ public sealed class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if(Despawn()) Destroy(gameObject);
+        if(Despawn()) ResetBullet();
     }
 
     public void ActiveBullet(Vector2 shootTarget, float shootingPower, string targetToHit)
@@ -24,6 +25,16 @@ public sealed class Bullet : MonoBehaviour
         _shootTarget = shootTarget;
 
         _rb.velocity = _shootTarget * shootingPower;
+    }
+
+    private void ResetBullet()
+    {
+        gameObject.SetActive(false);
+        _rb.velocity = Vector2.zero;
+        _shootTarget = Vector2.zero;
+        _currentTargetToHit = "";
+        
+        _objectPooling.ResetBullet();
     }
 
     private bool Despawn()
@@ -39,4 +50,6 @@ public sealed class Bullet : MonoBehaviour
         
         col.GetComponent<HealthData>().TakeDamage(1);
     }
+
+    public void SetObjectPooling(ObjectPooling parent) => _objectPooling = parent;
 }

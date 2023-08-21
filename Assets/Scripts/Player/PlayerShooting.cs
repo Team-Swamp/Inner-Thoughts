@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public sealed class PlayerShooting : MonoBehaviour
 {
+    [SerializeField] private ObjectPooling bulletSystem;
     [SerializeField] private GunData currentGunData;
     [SerializeField] private Transform firePoint;
 
@@ -16,11 +17,9 @@ public sealed class PlayerShooting : MonoBehaviour
 
     public void SetGunData(GunData targetData) => currentGunData = targetData;
 
-    private void Shoot() //todo: object pulling?
+    private void Shoot()
     {
-        var currentBullet = Instantiate(currentGunData.bullet, transform.position, transform.rotation); //todo: rotation laten kloppen met de riching dat de bullet op gaat. (als de bullets niet rond zijn)
-        currentBullet.GetComponent<Bullet>().ActiveBullet(ShootingDirection(), currentGunData.shootingPower, "Enemy");
-
+        bulletSystem.StartBullet(ShootingDirection(), currentGunData.shootingPower, "Enemy");
         onShoot?.Invoke();
     }
 
