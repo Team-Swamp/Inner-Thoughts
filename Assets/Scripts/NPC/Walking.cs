@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Walking : SmallEnemiesBaseState
+public class WalkingState : SmallEnemiesBaseState
 {
     protected override void EnterState(SmallEnemiesStateMachine enemy)
     {

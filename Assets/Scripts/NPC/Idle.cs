@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Idle : SmallEnemiesBaseState
+public class IdleState : SmallEnemiesBaseState
 {
     [SerializeField, Range(0, 30)] private float waitTime;
 
