@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5073119246401863913
 SpriteRenderer:
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8616f3bc6b01244b07da3761748d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGunData: {fileID: 11400000, guid: 3a6ec97f041ef07439fca2ea0f0dd1d8, type: 2}
+  startingGunData: {fileID: 11400000, guid: 3a6ec97f041ef07439fca2ea0f0dd1d8, type: 2}
   firePoint: {fileID: 112524548769678246}
   onShoot:
     m_PersistentCalls:
