@@ -29,7 +29,7 @@ public sealed class PlayerShooting : MonoBehaviour
     {
         var currentBullet = Instantiate(_bullet, transform.position, transform.rotation); //todo: rotation laten kloppen met de riching dat de bullet op gaat. (als de bullets niet rond zijn)
         currentBullet.ActiveBullet(ShootingDirection(), _shootingPower, "Enemy");
-        
+
         onShoot?.Invoke();
     }
 
