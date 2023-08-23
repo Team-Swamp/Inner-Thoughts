@@ -12,9 +12,9 @@ Unity game project
 
 ## Bas
 ### Pick-up buffs
-[Interface pickup](Assets/Scripts/Framework/Pick-ups/IPickup.cs)
-[Health buff](Assets/Scripts/Framework/Pick-ups//Buffs/HealthBuff.cs)
-[Speed buff](Assets/Scripts/Framework/Pick-ups//Buffs/SpeedBuff.cs)
+[Interface pickup](Assets/Scripts/Framework/Pick-ups/IPickup.cs)<br>
+[Health buff](Assets/Scripts/Framework/Pick-ups//Buffs/HealthBuff.cs)<br>
+[Speed buff](Assets/Scripts/Framework/Pick-ups//Buffs/SpeedBuff.cs)<br>
 [Gun buff](Assets/Scripts/Framework/Pick-ups//Buffs/GunBuff.cs)
 
 ### Future feature:
