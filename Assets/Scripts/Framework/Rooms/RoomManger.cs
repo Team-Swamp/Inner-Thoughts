@@ -7,7 +7,7 @@ public sealed class RoomManger : MonoBehaviour
     [SerializeField] private List<GameObject> doors;
     [SerializeField] private List<GameObject> enemies;
 
-    [Header("Uninty Event's")]
+    [Header("Unity events")]
     [SerializeField] private UnityEvent onRoomCleared = new UnityEvent();
     [SerializeField] private UnityEvent onRoomEntered = new UnityEvent();
     
