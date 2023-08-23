@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3845554638312408513}
   - component: {fileID: 7612748517665015134}
   - component: {fileID: 7211836861953676587}
+  - component: {fileID: 7664356881965016952}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5073119246401863913
 SpriteRenderer:
@@ -235,3 +236,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags:
   - Player
+--- !u!114 &7664356881965016952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684204552474564609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27474b529a71e8a4998f26ae29068e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
