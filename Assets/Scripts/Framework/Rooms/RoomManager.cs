@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public sealed class RoomManger : MonoBehaviour
+public sealed class RoomManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> doors;
     [SerializeField] private List<GameObject> enemies;
