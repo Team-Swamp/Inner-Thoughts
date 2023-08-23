@@ -11,6 +11,12 @@ Unity game project
 * Ruud, musician, gametester
 
 ## Bas
+### Pick-up buffs
+[Interface pickup](Assets/Scripts/Framework/Pick-ups/IPickup.cs)
+[Health buff](Assets/Scripts/Framework/Pick-ups//Buffs/HealthBuff.cs)
+[Speed buff](Assets/Scripts/Framework/Pick-ups//Buffs/SpeedBuff.cs)
+[Gun buff](Assets/Scripts/Framework/Pick-ups//Buffs/GunBuff.cs)
+
 ### Future feature:
 Unkown
 
