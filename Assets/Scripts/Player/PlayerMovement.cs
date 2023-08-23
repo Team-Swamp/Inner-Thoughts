@@ -4,10 +4,10 @@ public sealed class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float movingSpeed;
     
-    private CharacterController _characterController;
+    private Rigidbody2D _rigidbody;
     private Vector2 _moveVelocity;
 
-    private void Awake() => _characterController = GetComponent<CharacterController>();
+    private void Awake() => _rigidbody = GetComponent<Rigidbody2D>();
 
     private void FixedUpdate() => SetMoveDirection();
 
@@ -19,9 +19,9 @@ public sealed class PlayerMovement : MonoBehaviour
     
     private void SetMoveDirection()
     {
-        GetInput(out var _movementInput);
+        GetInput(out var movementInput);
         
-        _moveVelocity = _movementInput * movingSpeed;
-        _characterController.Move(_moveVelocity * Time.deltaTime);
+        _moveVelocity = movementInput * movingSpeed * Time.deltaTime;
+        _rigidbody.velocity = _moveVelocity;
     }
 }
