@@ -619,6 +619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathAI: {fileID: 0}
+  direction: {x: 0, y: 0}
 --- !u!1 &986587237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,6 +1321,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 563876923}
     m_Modifications:
+    - target: {fileID: 805210592267915938, guid: ddb8ab01fcf4ec2488b760c3f25a11c3, type: 3}
+      propertyPath: detailedGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 805210592267915938, guid: ddb8ab01fcf4ec2488b760c3f25a11c3, type: 3}
+      propertyPath: startEndModifier.addPoints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1567857334323557503, guid: ddb8ab01fcf4ec2488b760c3f25a11c3, type: 3}
       propertyPath: target
       value: 
