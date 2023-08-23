@@ -6,6 +6,7 @@ public class WalkingState : SmallEnemiesBaseState
     [SerializeField] private Grid myGrid;
     [SerializeField] private float distanceTreshhold;
     [SerializeField] private float movingSpeed;
+    RaycastHit2D[] hits = new RaycastHit2D[10];
 
     private Rigidbody2D _rigidbody;
     private Vector2 _moveVelocity;
@@ -50,7 +51,30 @@ public class WalkingState : SmallEnemiesBaseState
     private Waypoint GetNewWaypoint()
     {
         currentWaypoint = myGrid.GetRandomWaypoint();
+        /*if (!IsPathClear())
+        {
+            GetNewWaypoint();
+            return currentWaypoint;
+        }*/
         return currentWaypoint;
+    }
+    
+    private bool IsPathClear()
+    {
+        var moveDirection = currentWaypoint.transform.position - transform.position;
+        Physics2D.RaycastNonAlloc(transform.position, moveDirection, hits, moveDirection.magnitude);
+        foreach(var hit in hits)
+        {
+            if (hit.collider.isTrigger)
+            {
+                continue;
+            }
+            if(hit.collider.gameObject != currentWaypoint.gameObject)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
 

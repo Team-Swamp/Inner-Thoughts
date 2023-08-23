@@ -118,7 +118,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   currentWaypoint: {fileID: 0}
   myGrid: {fileID: 0}
   distanceTreshhold: 0.1
-  movingSpeed: 2
+  movingSpeed: 100
 --- !u!114 &257029462535104750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,11 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c5e833a1cb6d34081141fcfaff0989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingState: {fileID: 0}
+  startingState: {fileID: 257029462535104750}
   states:
-  - {fileID: 0}
+  - {fileID: 257029462535104750}
   - {fileID: 3791593691591913744}
   currentState: {fileID: 0}
   removeStateQueueTime: 0
-  <idleState>k__BackingField: {fileID: 0}
-  <walkingState>k__BackingField: {fileID: 0}
+  <idleState>k__BackingField: {fileID: 257029462535104750}
+  <walkingState>k__BackingField: {fileID: 3791593691591913744}

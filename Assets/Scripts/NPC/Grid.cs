@@ -14,6 +14,10 @@ public class Grid : MonoBehaviour
     public Waypoint GetRandomWaypoint()
     {
         var randomIndex = Random.Range(0, waypoints.Count);
+        if (waypoints[randomIndex].IsOccupied)
+        {
+            GetRandomWaypoint();
+        }
         return waypoints[randomIndex];
     }
 }
