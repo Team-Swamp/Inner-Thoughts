@@ -11,6 +11,11 @@ Unity game project
 * Ruud, musician, gametester
 
 ## Bas
+### Pick-up buffs
+[Interface pickup](Assets/Scripts/Framework/Pick-ups/IPickup.cs)<br>
+[Health buff](Assets/Scripts/Framework/Pick-ups//Buffs/HealthBuff.cs)<br>
+[Speed buff](Assets/Scripts/Framework/Pick-ups//Buffs/SpeedBuff.cs)<br>
+[Gun buff](Assets/Scripts/Framework/Pick-ups//Buffs/GunBuff.cs)
 ### Room system
 [Room manger](Assets/Scripts/Framework/Rooms/RoomManger.cs)<br>
 

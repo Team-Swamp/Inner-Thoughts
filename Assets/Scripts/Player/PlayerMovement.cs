@@ -11,6 +11,8 @@ public sealed class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate() => SetMoveDirection();
 
+    public void BuffSpeed(float buffSpeedAmount) => movingSpeed += buffSpeedAmount;
+
     private void GetInput(out Vector2 input2D)
     {
         input2D.x = Input.GetAxisRaw("Horizontal");
