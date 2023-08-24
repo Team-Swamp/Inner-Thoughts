@@ -116,7 +116,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8004640530957316345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2633e3b5ecdd413489e54fcd737d7d66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   movingSpeed: 150
 --- !u!114 &3845554638312408513
 MonoBehaviour:
@@ -185,8 +185,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f8616f3bc6b01244b07da3761748d37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   startingGunData: {fileID: 11400000, guid: 3a6ec97f041ef07439fca2ea0f0dd1d8, type: 2}
   firePoint: {fileID: 112524548769678246}
   onShoot:
@@ -202,8 +202,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 665c672f2e2777c47b3254da291fff52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   health: 3
   onHealthChanged:
     m_PersistentCalls:
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 950c66db4c06edf4bb7623cefb6128d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   tags:
   - Player
