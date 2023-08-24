@@ -3,19 +3,19 @@ using UnityEngine;
 
 public sealed class Waypoint : MonoBehaviour
 {
-    [Header("Grid")]
+    [Header("Reference")]
     [SerializeField] private Grid parentGrid;
-    [SerializeField] private bool isOccupied;
 
     [Header("Settings")]
+    [SerializeField] private bool isOccupied;
     [SerializeField] private float connectedWaypointRadius;
-    [SerializeField] private Collider2D[] hits = new Collider2D[7];
-    [SerializeField] private List<Waypoint> connectedWaypoints = new List<Waypoint>();
+    [SerializeField] private Collider2D[] hits = new Collider2D[8];
 
     [Header("Debug")]
     [SerializeField] private bool drawGizmos;
 
-    private Waypoint connectedWaypoint;
+    private Waypoint _connectedWaypoint;
+    private List<Waypoint> connectedWaypoints = new List<Waypoint>();
 
     private void Awake()
     {
@@ -39,17 +39,17 @@ public sealed class Waypoint : MonoBehaviour
         {
             if (hits[i].gameObject == gameObject) continue;
 
-            if(hits[i].TryGetComponent(out connectedWaypoint))
+            if(hits[i].TryGetComponent(out _connectedWaypoint))
             {
-                if (connectedWaypoints.Contains(connectedWaypoint))
+                if (connectedWaypoints.Contains(_connectedWaypoint))
                 {
-                    if (connectedWaypoint.isOccupied) connectedWaypoints.Remove(connectedWaypoint);
+                    if (_connectedWaypoint.isOccupied) connectedWaypoints.Remove(_connectedWaypoint);
                     continue;
                 }
 
-                if (connectedWaypoint.isOccupied) continue;
+                if (_connectedWaypoint.isOccupied) continue;
 
-                connectedWaypoints.Add(connectedWaypoint);
+                connectedWaypoints.Add(_connectedWaypoint);
             }
         }
     }

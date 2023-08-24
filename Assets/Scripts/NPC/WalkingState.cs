@@ -13,7 +13,7 @@ public class WalkingState : SmallEnemiesBaseState
     [Header("Performance")]
     [SerializeField] private int maxWaypointCallStack = 2;
 
-    private int newWaypointCallStack;
+    private int _newWaypointCallStack;
     private Vector2 _moveVelocity;
     private Waypoint _lastWaypoint;
     private Rigidbody2D _rb;
@@ -61,15 +61,15 @@ public class WalkingState : SmallEnemiesBaseState
     {
         _lastWaypoint = currentWaypoint;
 
-        if(newWaypointCallStack >= maxWaypointCallStack)
+        if(_newWaypointCallStack >= maxWaypointCallStack)
         {
             currentWaypoint = _lastWaypoint;
-            newWaypointCallStack = 0;
+            _newWaypointCallStack = 0;
         }
         else if(currentWaypoint.GetConnectedWaypoint() == _lastWaypoint)
         {
             currentWaypoint.GetConnectedWaypoint();
-            newWaypointCallStack++;
+            _newWaypointCallStack++;
         }
         else
         {
