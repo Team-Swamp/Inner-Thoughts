@@ -11,13 +11,16 @@ public class Grid : MonoBehaviour
         waypoints.Add(waypoint);
     }
 
+    public void UnsubscribeFromGrid(Waypoint waypoint)
+    {
+        if (!waypoints.Contains(waypoint)) return;
+
+        waypoints.Remove(waypoint);
+    }
+
     public Waypoint GetRandomWaypoint()
     {
         var randomIndex = Random.Range(0, waypoints.Count);
-        if (waypoints[randomIndex].IsOccupied)
-        {
-            GetRandomWaypoint();
-        }
         return waypoints[randomIndex];
     }
 }
