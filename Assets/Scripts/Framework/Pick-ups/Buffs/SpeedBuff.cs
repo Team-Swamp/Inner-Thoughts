@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpeedBuff : MonoBehaviour, IPickup
+public sealed class SpeedBuff : MonoBehaviour, IPickup
 {
     [SerializeField] private float buffSpeedAmount = 100;
     

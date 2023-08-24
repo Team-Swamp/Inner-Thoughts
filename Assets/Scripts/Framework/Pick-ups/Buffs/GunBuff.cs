@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GunBuff : MonoBehaviour, IPickup
+public sealed class GunBuff : MonoBehaviour, IPickup
 {
     [SerializeField] private GunData buffedGun;
     

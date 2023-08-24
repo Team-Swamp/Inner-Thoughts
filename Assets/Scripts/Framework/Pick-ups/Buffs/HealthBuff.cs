@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HealthBuff : MonoBehaviour, IPickup
+public sealed class HealthBuff : MonoBehaviour, IPickup
 {
     [SerializeField] private float buffHealthAmount;
     
