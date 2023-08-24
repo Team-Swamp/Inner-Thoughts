@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid : MonoBehaviour
+public sealed class Grid : MonoBehaviour
 {
     [SerializeField] private List<Waypoint> waypoints = new List<Waypoint>();
 
@@ -14,7 +14,6 @@ public class Grid : MonoBehaviour
     public void UnsubscribeFromGrid(Waypoint waypoint)
     {
         if (!waypoints.Contains(waypoint)) return;
-
         waypoints.Remove(waypoint);
     }
 

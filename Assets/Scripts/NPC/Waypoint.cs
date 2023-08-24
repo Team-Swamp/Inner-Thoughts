@@ -1,18 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Waypoint : MonoBehaviour
+public sealed class Waypoint : MonoBehaviour
 {
+    [Header("Grid")]
     [SerializeField] private Grid parentGrid;
     [SerializeField] private bool isOccupied;
+
+    [Header("Settings")]
     [SerializeField] private float connectedWaypointRadius;
     [SerializeField] private Collider2D[] hits = new Collider2D[7];
     [SerializeField] private List<Waypoint> connectedWaypoints = new List<Waypoint>();
 
+    [Header("Debug")]
     [SerializeField] private bool drawGizmos;
 
     private Waypoint connectedWaypoint;
-    public bool IsOccupied => isOccupied;
 
     private void Awake()
     {
@@ -65,9 +68,6 @@ public class Waypoint : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (drawGizmos)
-        {
-            Gizmos.DrawWireSphere(transform.position, connectedWaypointRadius);
-        }
+        if (drawGizmos) Gizmos.DrawWireSphere(transform.position, connectedWaypointRadius);
     }
 }
