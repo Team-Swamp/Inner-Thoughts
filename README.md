@@ -16,6 +16,8 @@ Unity game project
 [Health buff](Assets/Scripts/Framework/Pick-ups//Buffs/HealthBuff.cs)<br>
 [Speed buff](Assets/Scripts/Framework/Pick-ups//Buffs/SpeedBuff.cs)<br>
 [Gun buff](Assets/Scripts/Framework/Pick-ups//Buffs/GunBuff.cs)
+### Room system
+[Room manger](Assets/Scripts/Framework/Rooms/RoomManger.cs)<br>
 
 ### Future feature:
 Unkown
