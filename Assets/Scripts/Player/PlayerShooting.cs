@@ -11,16 +11,12 @@ public sealed class PlayerShooting : MonoBehaviour
 
     private GameObject _bullet;
     private float _shootingPower;
-    private float _shootingDelay;
+    private float _maxShootingDelay;
     private float _currentShootDelay;
     private bool _autoShooting;
 
-    private void Awake()
-    {
-        SetGunData(startingGunData);
-        _currentShootDelay = startingGunData.shootingDelay;
-    }
-
+    private void Awake() => SetGunData(startingGunData); 
+    
     private void Update()
     {
         _currentShootDelay -= Time.deltaTime;
@@ -28,12 +24,13 @@ public sealed class PlayerShooting : MonoBehaviour
         else if (Input.GetButtonDown("Fire1")) DelayedShooting();
     }
 
-    public void SetGunData(GunData targetData)
+    public void SetGunData(GunData gunData)
     {
-        _bullet = targetData.bullet;
-        _shootingPower = targetData.shootingPower;
-        _shootingDelay = targetData.shootingDelay;
-        _autoShooting = targetData.autoShooting;
+        _bullet = gunData.bullet;
+        _shootingPower = gunData.shootingPower;
+        _maxShootingDelay = gunData.shootingDelay;
+        _currentShootDelay = _maxShootingDelay;
+        _autoShooting = gunData.autoShooting;
     }
 
     private void DelayedShooting()
@@ -41,7 +38,7 @@ public sealed class PlayerShooting : MonoBehaviour
         if (!(_currentShootDelay <= 0)) return;
         
         Shoot();
-        _currentShootDelay = _shootingDelay;
+        _currentShootDelay = _maxShootingDelay;
     }
 
     private void Shoot()
