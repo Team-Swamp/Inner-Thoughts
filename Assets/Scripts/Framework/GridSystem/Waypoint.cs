@@ -91,7 +91,7 @@ public sealed class Waypoint : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (isOccupied) return;
         isOccupied = true;
@@ -103,6 +103,7 @@ public sealed class Waypoint : MonoBehaviour
         isOccupied = false;
         parentGrid.SubscribeToGrid(this);
         RefreshconnectedWaypoints();
+        InitialCollisionCheck();
     }
 
     private void OnDrawGizmos()

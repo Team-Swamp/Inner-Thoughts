@@ -145,5 +145,6 @@ MonoBehaviour:
   - {fileID: 0}
   waypointPrefab: {fileID: 8672382380245959460, guid: 4d3b98089d4cd134cbcec9deb949fa70, type: 3}
   gridSize: {x: 14.7, y: 7.74}
+  safeZonePadding: 1
   createGrid: 0
   clearGrid: 0
