@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2292faffd0b71e34db86cb6da9bc5de8, type: 3}
-  m_Name: Pistol
+  m_Name: SMG
   m_EditorClassIdentifier: 
   bullet: {fileID: 7382670567921211340, guid: 345f501f7da53f94e92305bf833dab85, type: 3}
   shootingPower: 7.5
-  shootingDelay: 0.5
-  autoShooting: 0
+  autoShooting: 1
+  shootingDelay: 0.15

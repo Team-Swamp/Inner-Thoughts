@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2292faffd0b71e34db86cb6da9bc5de8, type: 3}
-  m_Name: Better pistol
+  m_Name: Deagel
   m_EditorClassIdentifier: 
   bullet: {fileID: 7382670567921211340, guid: b1603bab9c02dbf4cb30f9917a16b4a5, type: 3}
   shootingPower: 15
+  shootingDelay: 0.4
+  autoShooting: 0
