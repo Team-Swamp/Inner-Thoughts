@@ -32,7 +32,6 @@ public sealed class Waypoint : MonoBehaviour
         if (hitCount <= 1)
         {
             isOccupied = false;
-            RefreshconnectedWaypoints();
             return;
         }
 
@@ -43,8 +42,6 @@ public sealed class Waypoint : MonoBehaviour
             
             isOccupied = true;
         }
-        
-        RefreshconnectedWaypoints();
     }
     
     public void SetGrid(Grid grid)
