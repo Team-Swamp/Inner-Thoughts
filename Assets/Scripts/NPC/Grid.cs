@@ -8,7 +8,7 @@ public sealed class Grid : MonoBehaviour
     [Header("Grid Creation")]
     [SerializeField] private Waypoint waypointPrefab;
     [SerializeField] private Vector2 gridSize;
-    [SerializeField] private float safeZonePadding;
+    [SerializeField] private float safeZonePadding = 1;
     [SerializeField] private bool createGrid;
     [SerializeField] private bool clearGrid;
     
