@@ -64,8 +64,8 @@ public sealed class Grid : MonoBehaviour
 
     private void ResetYPosition()
     {
-        initPosition.y = (gridSize.y + 1) / 2;
-        safeZone.y = initPosition.y - -initPosition.y - 1;
+        initPosition.y = (gridSize.y - 1) / 2;
+        safeZone.y = initPosition.y - -initPosition.y + 1;
     }
 
     private void DeleteGrid()
