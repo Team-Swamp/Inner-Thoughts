@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,10 +15,12 @@ public class AnimationController : MonoBehaviour
         _input.x = Input.GetAxisRaw("Horizontal");
         _input.y = Input.GetAxisRaw("Vertical");
         
+        var walksSideWays = _input.x != 0;
+        var walkingUp = _input.y < 0;
+        sprite.flipX = _input.x < 0;
+        
         animator.SetBool("isWalking", _input != Vector2.zero);
-        animator.SetFloat("X", _input.x);
-        animator.SetFloat("Y", _input.y);
-
-        sprite.flipX = _input.x > 0;
+        animator.SetBool("WalkingSideWays", walksSideWays);
+        animator.SetBool("WalkingUp", walkingUp);
     }
 }
