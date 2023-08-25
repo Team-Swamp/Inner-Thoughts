@@ -41,6 +41,17 @@ public class HealthData : MonoBehaviour
         TriggerChangedEvent(HealthEventTypes.AddHealth, healthAmount);
     }
 
+    public void BuffHealth(float healthAmount)
+    {
+        if(isDead) return;
+
+        _maxHealth += healthAmount;
+        health += healthAmount;
+        
+        onHealthAdded?.Invoke();
+        TriggerChangedEvent(HealthEventTypes.AddHealth, healthAmount);
+    }
+
     private void TriggerChangedEvent(HealthEventTypes type, float healthDelta = 0)
     {
         var healthEvent = new HealthEvent()
