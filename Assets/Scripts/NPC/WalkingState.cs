@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class WalkingState : SmallEnemiesBaseState
@@ -22,10 +23,13 @@ public class WalkingState : SmallEnemiesBaseState
     {
         _rb = enemy.Rigidbody;
 
-       if(currentWaypoint == null)
-       {
-            currentWaypoint = parentGrid.GetRandomWaypoint();
-       }
+        if(currentWaypoint == null)
+        {
+            var hit = Physics2D.OverlapBox(transform.position, transform.localScale, 0);
+            hit.TryGetComponent(out currentWaypoint);
+            _lastWaypoint = currentWaypoint;
+        }
+       
         MoveToWaypoint();
     }
 
@@ -46,7 +50,7 @@ public class WalkingState : SmallEnemiesBaseState
     private void MoveToWaypoint()
     {
         var moveDirection = currentWaypoint.transform.position - transform.position;
-        _moveVelocity = moveDirection.normalized * movingSpeed * Time.deltaTime;
+        _moveVelocity = moveDirection.normalized * (movingSpeed * Time.deltaTime);
         _rb.velocity = _moveVelocity;
     }
 
@@ -59,21 +63,20 @@ public class WalkingState : SmallEnemiesBaseState
 
     private void GetNewWaypoint()
     {
-        _lastWaypoint = currentWaypoint;
+        currentWaypoint.GetConnectedWaypoint(out var newWaypoint, out var isDeadEnd);
 
-        if(_newWaypointCallStack >= maxWaypointCallStack)
+        if (isDeadEnd)
         {
             currentWaypoint = _lastWaypoint;
-            _newWaypointCallStack = 0;
         }
-        else if(currentWaypoint.GetConnectedWaypoint() == _lastWaypoint)
+        else if (newWaypoint == _lastWaypoint)
         {
-            currentWaypoint.GetConnectedWaypoint();
-            _newWaypointCallStack++;
+            GetNewWaypoint();
         }
         else
         {
-            currentWaypoint = currentWaypoint.GetConnectedWaypoint();
+            _lastWaypoint = currentWaypoint;
+            currentWaypoint = newWaypoint;
         }
     }
 

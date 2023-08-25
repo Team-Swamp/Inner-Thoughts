@@ -17,17 +17,19 @@ public sealed class Waypoint : MonoBehaviour
     private Waypoint _connectedWaypoint;
     private List<Waypoint> connectedWaypoints = new List<Waypoint>();
 
-    private void Awake()
+    public void SetGrid(Grid grid)
     {
-        parentGrid = GetComponentInParent<Grid>();
+        parentGrid = grid;
         parentGrid.SubscribeToGrid(this);
     }
 
-    public Waypoint GetConnectedWaypoint()
+    public void GetConnectedWaypoint(out Waypoint newWaypoint, out bool isDeadEnd)
     {
         RefreshconnectedWaypoints();
+
+        isDeadEnd = connectedWaypoints.Count <= 1;
         var randomIndex = Random.Range(0, connectedWaypoints.Count);
-        return connectedWaypoints[randomIndex];
+        newWaypoint = connectedWaypoints[randomIndex];
     }
 
     private void RefreshconnectedWaypoints()
