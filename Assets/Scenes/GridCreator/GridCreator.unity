@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 719458881}
   - component: {fileID: 719458880}
   - component: {fileID: 719458879}
+  - component: {fileID: 719458882}
   m_Layer: 6
   m_Name: wall
   m_TagString: Untagged
@@ -253,6 +254,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &719458882
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719458878}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &870234610
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +430,7 @@ GameObject:
   - component: {fileID: 955494260}
   - component: {fileID: 955494259}
   - component: {fileID: 955494262}
+  - component: {fileID: 955494263}
   m_Layer: 6
   m_Name: wall-4
   m_TagString: Untagged
@@ -533,6 +562,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28139a70b7512648afa4b2691c317a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &955494263
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955494258}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &986587237
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +718,7 @@ GameObject:
   - component: {fileID: 1019667938}
   - component: {fileID: 1019667937}
   - component: {fileID: 1019667936}
+  - component: {fileID: 1019667939}
   m_Layer: 6
   m_Name: wall-3
   m_TagString: Untagged
@@ -781,6 +838,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!50 &1019667939
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019667935}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1001 &1021924835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -857,6 +941,7 @@ GameObject:
   - component: {fileID: 1420885818}
   - component: {fileID: 1420885817}
   - component: {fileID: 1420885816}
+  - component: {fileID: 1420885819}
   m_Layer: 6
   m_Name: wall-5
   m_TagString: Untagged
@@ -976,6 +1061,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1420885819
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420885815}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!114 &1851932287 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2091500907248627528, guid: 80f5c97d9409574488c1c070137294b3, type: 3}
@@ -998,6 +1110,7 @@ GameObject:
   - component: {fileID: 2046301044}
   - component: {fileID: 2046301043}
   - component: {fileID: 2046301042}
+  - component: {fileID: 2046301045}
   m_Layer: 6
   m_Name: wall-2
   m_TagString: Untagged
@@ -1117,6 +1230,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &2046301045
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046301041}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1001 &2002388276358095208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1205,6 +1345,14 @@ PrefabInstance:
     - target: {fileID: 760429971601794190, guid: 80f5c97d9409574488c1c070137294b3, type: 3}
       propertyPath: m_Name
       value: NewGrid
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091500907248627528, guid: 80f5c97d9409574488c1c070137294b3, type: 3}
+      propertyPath: gridSize.x
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091500907248627528, guid: 80f5c97d9409574488c1c070137294b3, type: 3}
+      propertyPath: gridSize.y
+      value: 11.1
       objectReference: {fileID: 0}
     - target: {fileID: 7634231992555188991, guid: 80f5c97d9409574488c1c070137294b3, type: 3}
       propertyPath: m_RootOrder

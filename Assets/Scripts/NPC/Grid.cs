@@ -19,6 +19,7 @@ public sealed class Grid : MonoBehaviour
 
     private void Awake()
     {
+        createGrid = false;
         if (waypoints.Count <= 0)
         {
             CreateGrid();
