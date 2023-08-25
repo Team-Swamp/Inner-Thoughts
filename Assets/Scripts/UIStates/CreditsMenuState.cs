@@ -1,5 +1,3 @@
-using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +5,7 @@ public class CreditsMenuState : UIBaseState
 {
     [SerializeField] private float duration;
     [Space]
-    public UnityEvent onDuration = new UnityEvent();
+    [SerializeField] private UnityEvent onDuration = new UnityEvent();
 
     private float _maxDuration;
 
@@ -23,8 +21,5 @@ public class CreditsMenuState : UIBaseState
         if(Input.GetKeyDown(KeyCode.Space) || duration <= 0) onDuration?.Invoke();
     }
 
-    protected override void ExitState()
-    {
-        duration = _maxDuration;
-    }
+    protected override void ExitState() => duration = _maxDuration;
 }

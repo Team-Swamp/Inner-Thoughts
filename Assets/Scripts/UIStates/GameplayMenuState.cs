@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GamePlayMenuState : UIBaseState
+public class GameplayMenuState : UIBaseState
 {
     [SerializeField] private UnityEvent onPause = new UnityEvent();
     [SerializeField] private UnityEvent onPressedResume = new UnityEvent();
@@ -15,7 +15,7 @@ public class GamePlayMenuState : UIBaseState
 
     private void GetPauseState()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && OwningStateMachine.CurrentState is GamePlayMenuState or PauseMenuState)
+        if (Input.GetKeyDown(KeyCode.Tab) && OwningStateMachine.CurrentState is GameplayMenuState or PauseMenuState)
         {
             Resume();
         }

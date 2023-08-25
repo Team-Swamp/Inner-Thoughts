@@ -1406,7 +1406,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 8637412191104011892}
         m_TargetAssemblyTypeName: PauseMenuState, Assembly-CSharp
-        m_MethodName: TogglePauseMenu
+        m_MethodName: SetPauseMenu
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

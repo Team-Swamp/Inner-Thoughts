@@ -32,13 +32,13 @@ public class PauseMenuState : UIBaseState
 
     private void UpdatePauseMenu()
     {
-        TogglePauseMenu(_isPaused);
+        SetPauseMenu(_isPaused);
         parentPauseMenu.SetActive(_isPaused);
         optionsScreen.SetActive(false);
         onUnpause?.Invoke();
     }
 
-    public void TogglePauseMenu(bool isPaused)
+    public void SetPauseMenu(bool isPaused)
     {
         pauseScreen.SetActive(!isPaused);
         _isPaused = !isPaused;
