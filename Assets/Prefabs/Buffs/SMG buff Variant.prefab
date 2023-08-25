@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 694017082429900962, guid: 87f32fec20ffb9141a4ec276e23335c4, type: 3}
+      propertyPath: buffedGun
+      value: 
+      objectReference: {fileID: 11400000, guid: 48e62c22e89ed6048b98bf937707d436, type: 2}
     - target: {fileID: 1080764371939665288, guid: 87f32fec20ffb9141a4ec276e23335c4, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -103,7 +107,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

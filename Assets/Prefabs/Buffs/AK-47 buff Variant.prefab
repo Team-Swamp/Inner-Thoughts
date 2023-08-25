@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 694017082429900962, guid: 87f32fec20ffb9141a4ec276e23335c4, type: 3}
+      propertyPath: buffedGun
+      value: 
+      objectReference: {fileID: 11400000, guid: b977251df73cd3b48a13b96223b2b53c, type: 2}
     - target: {fileID: 1080764371939665288, guid: 87f32fec20ffb9141a4ec276e23335c4, type: 3}
       propertyPath: m_RootOrder
       value: 7
