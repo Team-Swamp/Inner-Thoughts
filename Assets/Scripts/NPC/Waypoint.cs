@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public sealed class Waypoint : MonoBehaviour
@@ -55,6 +56,13 @@ public sealed class Waypoint : MonoBehaviour
         RefreshconnectedWaypoints();
 
         isDeadEnd = _connectedWaypoints.Count <= 1;
+        
+        if (isDeadEnd)
+        {
+            newWaypoint = null;
+            return;
+        }
+        
         var randomIndex = Random.Range(0, _connectedWaypoints.Count);
         newWaypoint = _connectedWaypoints[randomIndex];
     }
@@ -70,7 +78,7 @@ public sealed class Waypoint : MonoBehaviour
 
             if(hits[i].TryGetComponent(out _connectedWaypoint))
             {
-                if (_connectedWaypoints.Contains(_connectedWaypoint))
+                if (_connectedWaypoints.Contains(_connectedWaypoint)  || !hits.Contains(hits[i]))
                 {
                     if (_connectedWaypoint.isOccupied) _connectedWaypoints.Remove(_connectedWaypoint);
                     continue;
@@ -83,7 +91,7 @@ public sealed class Waypoint : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isOccupied) return;
         isOccupied = true;
@@ -94,6 +102,7 @@ public sealed class Waypoint : MonoBehaviour
     {
         isOccupied = false;
         parentGrid.SubscribeToGrid(this);
+        RefreshconnectedWaypoints();
     }
 
     private void OnDrawGizmos()
