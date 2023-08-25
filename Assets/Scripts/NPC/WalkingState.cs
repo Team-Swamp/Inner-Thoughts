@@ -1,19 +1,15 @@
+using System;
 using UnityEngine;
 
 public class WalkingState : SmallEnemiesBaseState
 {
     [Header("Grid")]
     [SerializeField] private Waypoint currentWaypoint;
-    [SerializeField] private Grid parentGrid; 
 
     [Header("Settings")]
     [SerializeField] private float distanceTreshhold;
     [SerializeField] private float movingSpeed;
-
-    [Header("Performance")]
-    [SerializeField] private int maxWaypointCallStack = 2;
-
-    private int _newWaypointCallStack;
+    
     private Vector2 _moveVelocity;
     private Waypoint _lastWaypoint;
     private Rigidbody2D _rb;
@@ -22,11 +18,7 @@ public class WalkingState : SmallEnemiesBaseState
     {
         _rb = enemy.Rigidbody;
 
-       if(currentWaypoint == null)
-       {
-            currentWaypoint = parentGrid.GetRandomWaypoint();
-       }
-        MoveToWaypoint();
+        InitialiseWaypoint();
     }
 
     protected override void ExitState(SmallEnemiesStateMachine enemy) { }
@@ -42,11 +34,29 @@ public class WalkingState : SmallEnemiesBaseState
         }
         Debug.DrawLine(transform.position, currentWaypoint.transform.position);
     }
+    
+    private void InitialiseWaypoint()
+    {
+        if (currentWaypoint != null) return;
+        
+        var hits = new Collider2D[2];
+        var hitCount = Physics2D.OverlapBoxNonAlloc(transform.position, transform.localScale, 0, hits);
+
+        for (int i = 0; i < hitCount; i++)
+        {
+            if (currentWaypoint != null) continue;
+                
+            hits[i].TryGetComponent(out currentWaypoint);
+            _lastWaypoint = currentWaypoint;
+        }
+        
+        MoveToWaypoint();
+    }
 
     private void MoveToWaypoint()
     {
         var moveDirection = currentWaypoint.transform.position - transform.position;
-        _moveVelocity = moveDirection.normalized * movingSpeed * Time.deltaTime;
+        _moveVelocity = moveDirection.normalized * (movingSpeed * Time.deltaTime);
         _rb.velocity = _moveVelocity;
     }
 
@@ -59,21 +69,20 @@ public class WalkingState : SmallEnemiesBaseState
 
     private void GetNewWaypoint()
     {
-        _lastWaypoint = currentWaypoint;
+        currentWaypoint.GetConnectedWaypoint(out var newWaypoint, out var isDeadEnd);
 
-        if(_newWaypointCallStack >= maxWaypointCallStack)
+        if (isDeadEnd)
         {
             currentWaypoint = _lastWaypoint;
-            _newWaypointCallStack = 0;
         }
-        else if(currentWaypoint.GetConnectedWaypoint() == _lastWaypoint)
+        else if (newWaypoint == _lastWaypoint)
         {
-            currentWaypoint.GetConnectedWaypoint();
-            _newWaypointCallStack++;
+            GetNewWaypoint();
         }
         else
         {
-            currentWaypoint = currentWaypoint.GetConnectedWaypoint();
+            _lastWaypoint = currentWaypoint;
+            currentWaypoint = newWaypoint;
         }
     }
 
