@@ -4,10 +4,9 @@ using UnityEngine;
 public sealed class Bullet : MonoBehaviour
 {
     [SerializeField, Range(0, 150)] private float maxTravelDistance;
+    [SerializeField, Range(0, 10)] private int damage = 1;
     
     private Rigidbody2D _rigidbody;
-    private string _playerTag = "Player";
-    private string _enemyTag = "Enemy";
     private string _currentTargetToHit;
     private Vector2 _shootTarget;
 
@@ -36,6 +35,6 @@ public sealed class Bullet : MonoBehaviour
     {
         if(!col.gameObject.HasTag(_currentTargetToHit)) return;
         
-        col.GetComponent<HealthData>().TakeDamage(1);
+        col.GetComponent<HealthData>().TakeDamage(damage);
     }
 }
