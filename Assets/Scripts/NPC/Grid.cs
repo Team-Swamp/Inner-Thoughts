@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public sealed class Grid : MonoBehaviour
 {
@@ -9,21 +8,21 @@ public sealed class Grid : MonoBehaviour
     [Header("Grid Creation")]
     [SerializeField] private Waypoint waypointPrefab;
     [SerializeField] private Vector2 gridSize;
+    [SerializeField] private float safeZonePadding;
     [SerializeField] private bool createGrid;
+    [SerializeField] private bool clearGrid;
     
-    private Vector2 initPosition;
-    private Vector2 safeZone;
-    private Vector2 waypointAmount;
-    private bool hasUpdatedGrid;
-    private int waypointIndex;
+    private GameObject _waypointsParent;
+    private Vector2 _initPosition;
+    private Vector2 _safeZone;
+    private Vector2 _waypointAmount;
+    private bool _hasUpdatedGrid;
+    private int _waypointIndex;
 
     private void Awake()
     {
         createGrid = false;
-        if (waypoints.Count <= 0)
-        {
-            CreateGrid();
-        }
+        if (waypoints.Count <= 0) CreateGrid();
     }
 
     public void SubscribeToGrid(Waypoint waypoint)
@@ -46,8 +45,8 @@ public sealed class Grid : MonoBehaviour
 
     private void CalculateWaypoints()
     {
-        waypointAmount.x = (int)Mathf.Abs(gridSize.x);
-        waypointAmount.y = (int)Mathf.Abs(gridSize.y);
+        _waypointAmount.x = (int)Mathf.Abs(gridSize.x);
+        _waypointAmount.y = (int)Mathf.Abs(gridSize.y);
     }
 
     private void InitPosition()
@@ -58,14 +57,14 @@ public sealed class Grid : MonoBehaviour
 
     private void ResetXPosition()
     {
-        initPosition.x = -(gridSize.x - 1) / 2;
-        safeZone.x = -initPosition.x - initPosition.x + 1;
+        _initPosition.x = -(gridSize.x - 1) / 2;
+        _safeZone.x = -_initPosition.x - _initPosition.x + safeZonePadding;
     }
 
     private void ResetYPosition()
     {
-        initPosition.y = (gridSize.y - 1) / 2;
-        safeZone.y = initPosition.y - -initPosition.y + 1;
+        _initPosition.y = (gridSize.y - 1) / 2;
+        _safeZone.y = _initPosition.y - -_initPosition.y + safeZonePadding;
     }
 
     private void DeleteGrid()
@@ -81,39 +80,56 @@ public sealed class Grid : MonoBehaviour
     private void CreateLine()
     {
         ResetYPosition();
-        for (int i = 0; i < waypointAmount.y; i++)
+        for (int i = 0; i < _waypointAmount.y; i++)
         {
-            var newWaypoint = Instantiate(waypointPrefab, initPosition, transform.rotation);
-            newWaypoint.transform.parent = transform;
-            newWaypoint.transform.localPosition = initPosition;
+            var newWaypoint = Instantiate(waypointPrefab, transform.position, transform.rotation);
+            newWaypoint.transform.parent = _waypointsParent.transform;
+            newWaypoint.transform.localPosition = _initPosition;
             newWaypoint.SetGrid(this);
-            newWaypoint.name += $"{++waypointIndex}";
-            initPosition.y -= safeZone.y / waypointAmount.y;
+            newWaypoint.name += $"{++_waypointIndex}";
+            _initPosition.y -= _safeZone.y / _waypointAmount.y;
         }
+    }
+    
+    private void CreateWaypointsParent()
+    {
+        if (_waypointsParent != null) return;
+
+        _waypointsParent = new GameObject("WaypointParent");
+        _waypointsParent.transform.parent = transform;
+        _waypointsParent.transform.localPosition = Vector3.zero;
     }
 
     private void CreateGrid()
     {
-        waypointIndex = 0;
-        CalculateWaypoints();
+        _waypointIndex = 0;
         DeleteGrid();
+        CreateWaypointsParent();
+        CalculateWaypoints();
         InitPosition();
         
-        for (int i = 0; i < waypointAmount.x; i++)
+        for (int i = 0; i < _waypointAmount.x; i++)
         {
             CreateLine();
-            initPosition.x += safeZone.x / waypointAmount.x;
+            _initPosition.x += _safeZone.x / _waypointAmount.x;
         }
     }
+
 
     private void OnDrawGizmos()
     {
         CalculateWaypoints();
-        
+
         if (createGrid)
         {
-            CreateGrid();
             createGrid = false;
+            CreateGrid();
+        }
+
+        if (clearGrid)
+        {
+            clearGrid = false;
+            DeleteGrid();
         }
 
         Gizmos.DrawWireCube(transform.position, gridSize);

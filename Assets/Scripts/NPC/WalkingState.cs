@@ -5,16 +5,11 @@ public class WalkingState : SmallEnemiesBaseState
 {
     [Header("Grid")]
     [SerializeField] private Waypoint currentWaypoint;
-    [SerializeField] private Grid parentGrid; 
 
     [Header("Settings")]
     [SerializeField] private float distanceTreshhold;
     [SerializeField] private float movingSpeed;
-
-    [Header("Performance")]
-    [SerializeField] private int maxWaypointCallStack = 2;
-
-    private int _newWaypointCallStack;
+    
     private Vector2 _moveVelocity;
     private Waypoint _lastWaypoint;
     private Rigidbody2D _rb;
@@ -23,14 +18,7 @@ public class WalkingState : SmallEnemiesBaseState
     {
         _rb = enemy.Rigidbody;
 
-        if(currentWaypoint == null)
-        {
-            var hit = Physics2D.OverlapBox(transform.position, transform.localScale, 0);
-            hit.TryGetComponent(out currentWaypoint);
-            _lastWaypoint = currentWaypoint;
-        }
-       
-        MoveToWaypoint();
+        InitialiseWaypoint();
     }
 
     protected override void ExitState(SmallEnemiesStateMachine enemy) { }
@@ -45,6 +33,24 @@ public class WalkingState : SmallEnemiesBaseState
             MoveToWaypoint();
         }
         Debug.DrawLine(transform.position, currentWaypoint.transform.position);
+    }
+    
+    private void InitialiseWaypoint()
+    {
+        if (currentWaypoint != null) return;
+        
+        var hits = new Collider2D[2];
+        var hitCount = Physics2D.OverlapBoxNonAlloc(transform.position, transform.localScale, 0, hits);
+
+        for (int i = 0; i < hitCount; i++)
+        {
+            if (currentWaypoint != null) continue;
+                
+            hits[i].TryGetComponent(out currentWaypoint);
+            _lastWaypoint = currentWaypoint;
+        }
+        
+        MoveToWaypoint();
     }
 
     private void MoveToWaypoint()

@@ -15,8 +15,38 @@ public sealed class Waypoint : MonoBehaviour
     [SerializeField] private bool drawGizmos;
 
     private Waypoint _connectedWaypoint;
-    private List<Waypoint> connectedWaypoints = new List<Waypoint>();
+    private List<Waypoint> _connectedWaypoints = new List<Waypoint>();
+    
+    private bool _gameStart;
 
+    private void Awake()
+    {
+        _gameStart = true;
+        InitialCollisionCheck();
+    }
+    
+    private void InitialCollisionCheck()
+    {
+        var hitCount = Physics2D.OverlapBoxNonAlloc(transform.position, transform.localScale / 2, 0, hits);
+
+        if (hitCount <= 1)
+        {
+            isOccupied = false;
+            RefreshconnectedWaypoints();
+            return;
+        }
+
+        for (int i = 0; i < hitCount; i++)
+        {
+            if (isOccupied) continue;
+            if (hits[i].gameObject == gameObject) continue;
+            
+            isOccupied = true;
+        }
+        
+        RefreshconnectedWaypoints();
+    }
+    
     public void SetGrid(Grid grid)
     {
         parentGrid = grid;
@@ -27,9 +57,9 @@ public sealed class Waypoint : MonoBehaviour
     {
         RefreshconnectedWaypoints();
 
-        isDeadEnd = connectedWaypoints.Count <= 1;
-        var randomIndex = Random.Range(0, connectedWaypoints.Count);
-        newWaypoint = connectedWaypoints[randomIndex];
+        isDeadEnd = _connectedWaypoints.Count <= 1;
+        var randomIndex = Random.Range(0, _connectedWaypoints.Count);
+        newWaypoint = _connectedWaypoints[randomIndex];
     }
 
     private void RefreshconnectedWaypoints()
@@ -43,21 +73,22 @@ public sealed class Waypoint : MonoBehaviour
 
             if(hits[i].TryGetComponent(out _connectedWaypoint))
             {
-                if (connectedWaypoints.Contains(_connectedWaypoint))
+                if (_connectedWaypoints.Contains(_connectedWaypoint))
                 {
-                    if (_connectedWaypoint.isOccupied) connectedWaypoints.Remove(_connectedWaypoint);
+                    if (_connectedWaypoint.isOccupied) _connectedWaypoints.Remove(_connectedWaypoint);
                     continue;
                 }
 
                 if (_connectedWaypoint.isOccupied) continue;
 
-                connectedWaypoints.Add(_connectedWaypoint);
+                _connectedWaypoints.Add(_connectedWaypoint);
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
+        if (isOccupied) return;
         isOccupied = true;
         parentGrid.UnsubscribeFromGrid(this);
     }
@@ -70,6 +101,21 @@ public sealed class Waypoint : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (drawGizmos) Gizmos.DrawWireSphere(transform.position, connectedWaypointRadius);
+        Gizmos.color = Color.gray;
+
+        if (!_gameStart)
+        {
+            InitialCollisionCheck();
+        }
+        
+        if (!isOccupied)
+        {
+            Gizmos.DrawWireCube(transform.position, transform.localScale / 2);
+        }
+
+        if (drawGizmos)
+        {
+            Gizmos.DrawWireSphere(transform.position, connectedWaypointRadius);
+        }
     }
 }
