@@ -85,6 +85,7 @@ public sealed class Grid : MonoBehaviour
         {
             var newWaypoint = Instantiate(waypointPrefab, initPosition, transform.rotation);
             newWaypoint.transform.parent = transform;
+            newWaypoint.transform.localPosition = initPosition;
             newWaypoint.SetGrid(this);
             newWaypoint.name += $"{++waypointIndex}";
             initPosition.y -= safeZone.y / waypointAmount.y;
