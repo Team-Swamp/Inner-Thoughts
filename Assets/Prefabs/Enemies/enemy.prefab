@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3791593691591913744}
   - component: {fileID: 257029462535104750}
   - component: {fileID: 6709978836934049866}
+  - component: {fileID: 4876707642076528217}
+  - component: {fileID: -8560057353934842336}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -35,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4380739365060541549
 SpriteRenderer:
@@ -209,3 +211,58 @@ MonoBehaviour:
   removeStateQueueTime: 0
   <idleState>k__BackingField: {fileID: 257029462535104750}
   <walkingState>k__BackingField: {fileID: 3791593691591913744}
+--- !u!114 &4876707642076528217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2505449089043201607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665c672f2e2777c47b3254da291fff52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onHealthAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2505449089043201607}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onResurrected:
+    m_PersistentCalls:
+      m_Calls: []
+  isDead: 0
+--- !u!114 &-8560057353934842336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2505449089043201607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950c66db4c06edf4bb7623cefb6128d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Enemy

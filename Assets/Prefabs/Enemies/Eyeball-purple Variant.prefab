@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4876707642076528217, guid: ddb8ab01fcf4ec2488b760c3f25a11c3, type: 3}
+      propertyPath: health
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4907533068014465794, guid: ddb8ab01fcf4ec2488b760c3f25a11c3, type: 3}
       propertyPath: m_RootOrder
       value: 3
