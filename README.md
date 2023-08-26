@@ -21,7 +21,7 @@ Images for bullets coming soon
 [Gun buff](Assets/Scripts/Framework/Pick-ups//Buffs/GunBuff.cs)<br>
 Image coming soon
 ### Room system
-[Room manager](Assets/Scripts/Framework/Rooms/RoomManger.cs)<br>
+[Room manager](Assets/Scripts/Framework/Rooms/RoomManager.cs)<br>
 ### Environment tile set
 Image coming soon
 ### Player animation controller
