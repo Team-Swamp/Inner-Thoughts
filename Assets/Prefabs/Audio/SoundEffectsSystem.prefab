@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1141757ec8ae65743b4fad0ffb44ed68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectClips: []
-  audioSource: {fileID: 0}
+  soundEffectClips:
+  - {fileID: 8300000, guid: d6c5215604d222541894a8f58a678879, type: 3}
+  - {fileID: 8300000, guid: d3e48895f2dad4b4b8e8b02dc780e6d7, type: 3}
+  audioSource: {fileID: 5164310085968156710}
 --- !u!82 &5164310085968156710
 AudioSource:
   m_ObjectHideFlags: 0

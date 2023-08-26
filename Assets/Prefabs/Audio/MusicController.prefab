@@ -45,8 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472d08a2dae84124aa2080570aa71544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips: []
-  audioSource: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 309505cdff0f398418dc7a2559241c7d, type: 3}
+  - {fileID: 8300000, guid: 7a7d873d2870d704dbad49d28bdf6491, type: 3}
+  - {fileID: 8300000, guid: 0dbde0a269bed82438bf3675ab095859, type: 3}
+  - {fileID: 8300000, guid: 2df50cd0c27652445823cda8238f1e9e, type: 3}
+  - {fileID: 8300000, guid: 0d4e38334ada6014a9d7bfa6bae4c9a8, type: 3}
+  audioSource: {fileID: 192769840682117860}
   waitForMusicTime: 0
 --- !u!82 &192769840682117860
 AudioSource:
@@ -60,7 +65,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
