@@ -11,6 +11,9 @@ A unity game project made for the Brackeys gamejam 2023.2. It's a pixel top-down
 * Ruud, musician, gametester
 
 ## Bas
+### Player shooting
+[Player shooting](Assets/Scripts/Player/PlayerShooting.cs)<br>
+Images for bullets coming soon
 ### Pick-up buffs
 [Interface pickup](Assets/Scripts/Framework/Pick-ups/IPickup.cs)<br>
 [Health buff](Assets/Scripts/Framework/Pick-ups//Buffs/HealthBuff.cs)<br>
@@ -18,14 +21,16 @@ A unity game project made for the Brackeys gamejam 2023.2. It's a pixel top-down
 [Gun buff](Assets/Scripts/Framework/Pick-ups//Buffs/GunBuff.cs)<br>
 Image coming soon
 ### Room system
-[Room manger](Assets/Scripts/Framework/Rooms/RoomManger.cs)<br>
+[Room manager](Assets/Scripts/Framework/Rooms/RoomManger.cs)<br>
 ### Environment tile set
 Image coming soon
+### Player animation controller
+[Animation controller](Assets/Scripts/Player/AnimationController.cs)<br>
+### Enemies art (eye balls)
+Images coming soon
 
 ### Future feature:
-* Pick-ups art
-* Player art
-* Enemies art
+Unkown
 
 ## Tatum
 ### Player movement
@@ -57,6 +62,8 @@ Unkown
 Grid creater
 
 ## Mikey
+### Player art
+Image coming soon
 ### Future feature:
 Unkown
 
