@@ -32,7 +32,7 @@ Transform:
   - {fileID: 2318136550556689880}
   - {fileID: 5324501056842351949}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &8471885829884542880
 Grid:
@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 4482226569256212766}
   - component: {fileID: 8104424427814569360}
   - component: {fileID: 8233143257920362413}
+  - component: {fileID: 256823442198452670}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -863,6 +864,20 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &256823442198452670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6245010943201361028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950c66db4c06edf4bb7623cefb6128d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - wall
 --- !u!1 &9197498095357734044
 GameObject:
   m_ObjectHideFlags: 0

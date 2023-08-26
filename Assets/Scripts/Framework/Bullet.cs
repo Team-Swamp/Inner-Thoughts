@@ -33,6 +33,8 @@ public sealed class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if(col.gameObject.HasTag("wall")) Destroy(gameObject);
+        
         if(!col.gameObject.HasTag(_currentTargetToHit)) return;
         
         col.GetComponent<HealthData>().TakeDamage(damage);
