@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public sealed class Bullet : MonoBehaviour
@@ -14,7 +15,7 @@ public sealed class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if(HasReachedMaxDistance()) Destroy(gameObject);
+        // if(HasReachedMaxDistance()) Destroy(gameObject);
     }
 
     public void ActiveBullet(Vector2 shootTarget, float shootingPower, string targetToHit)
@@ -23,6 +24,14 @@ public sealed class Bullet : MonoBehaviour
         _shootTarget = shootTarget;
 
         _rigidbody.velocity = _shootTarget * shootingPower;
+
+        StartCoroutine(DeleteBullet());
+    }
+
+    private IEnumerator DeleteBullet()
+    {
+        yield return new WaitForSeconds(10);
+        Destroy(gameObject);
     }
 
     private bool HasReachedMaxDistance()
