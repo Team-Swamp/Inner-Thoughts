@@ -4951,6 +4951,7 @@ GameObject:
   - component: {fileID: 7211836861953676587}
   - component: {fileID: 7664356881965016952}
   - component: {fileID: 4229887415399856193}
+  - component: {fileID: 391943608550583102}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4973,7 +4974,7 @@ Transform:
   - {fileID: 6105117109691948748}
   - {fileID: 1659937762135213800}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &957526590783532592
 Rigidbody2D:
@@ -5113,7 +5114,19 @@ MonoBehaviour:
         m_CallState: 2
   onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 391943608550583102}
+        m_TargetAssemblyTypeName: Death, Assembly-CSharp
+        m_MethodName: GoToLoseScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onResurrected:
     m_PersistentCalls:
       m_Calls: []
@@ -5158,3 +5171,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8388046433146936565}
   sprite: {fileID: 8239625445429330217}
+--- !u!114 &391943608550583102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684204552474564609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69967407775b44946a5348fcbb474b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

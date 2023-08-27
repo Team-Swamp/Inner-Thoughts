@@ -11,6 +11,9 @@ public sealed class RoomManager : MonoBehaviour
     [SerializeField] private UnityEvent onRoomCleared = new UnityEvent();
     [SerializeField] private UnityEvent onRoomEntered = new UnityEvent();
     
+    private UIStateMachineBehavior _uiStatemachineBehavior;
+    private CreditsMenuState _winningState;
+    
     public bool IsCleared { get; private set; }
     private int _enemiesDeathAmount;
 
@@ -38,9 +41,20 @@ public sealed class RoomManager : MonoBehaviour
     private void EveryEnemiesIsDead()
     {
         if(_enemiesDeathAmount != enemies.Count) return;
-
+        
         IsCleared = true;
-        SetDoorsStates(false);
         onRoomCleared?.Invoke();
+        SetDoorsStates(false);
+    }
+
+    private void Start()
+    {
+        _uiStatemachineBehavior = FindObjectOfType<UIStateMachineBehavior>();
+        _winningState = FindFirstObjectByType<CreditsMenuState>(FindObjectsInactive.Include);
+    }
+
+    public void GoToCredits()
+    {
+        _uiStatemachineBehavior.ChangeState(_winningState);
     }
 }

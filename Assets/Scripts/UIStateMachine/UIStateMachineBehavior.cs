@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class UIStateMachineBehavior : MonoBehaviour
 {
@@ -26,6 +26,12 @@ public class UIStateMachineBehavior : MonoBehaviour
     {
         UIStateMachine.ChangeState(uiBaseState, out currentState);
     }
-    
+
+    public void ReloadScene()
+    {
+        var scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
     public void QuitGame() => Application.Quit();
 }
