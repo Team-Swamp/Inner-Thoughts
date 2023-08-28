@@ -2,17 +2,18 @@
 A unity game project made for the Brackeys gamejam 2023.2. It's a pixel top-down rogue-like (maybe a rogue-light). 
 
 ## Team
-* Bas, project lead, game developer & game artist
-* Tatum, project lead, game developer & game designer
-* Rick, game developer
-* Joost, game developer
-* Mark, game developer
-* Mikey, musician & game artist
-* Ruud, musician, gametester
+* Bas: project lead, game developer & game artist
+* Tatum: project lead, game developer & game designer
+* Rick: game developer
+* Mark: game developer
+* Mikey: musician & game artist
+* Ruud: musician
 
 ## Bas
 ### Player shooting
 [Player shooting](Assets/Scripts/Player/PlayerShooting.cs)<br>
+[Bullet](Assets/Scripts/Framework/Bullet.cs)<br>
+[Mouse position](Assets/Scripts/Player/MousePosition.cs)<br>
 Images for bullets coming soon
 ### Pick-up buffs
 [Interface pickup](Assets/Scripts/Framework/Pick-ups/IPickup.cs)<br>
@@ -30,13 +31,16 @@ Image coming soon
 Images coming soon
 
 ### Future feature:
-Unkown
+Health indicator
 
 ## Tatum
 ### Player movement
 [Player movement](Assets/Scripts/Player/PlayerMovement.cs)
-### Future feature:
-Camera controller
+### Audio systems
+[Music controller](Assets/Scripts/Framework/Audio/MusicController.cs)<br>
+[Soundeffect system](Assets/Scripts/Framework/Audio/SoundEffectSystem.cs)
+### Camera controller:
+[Camera controller](Assets/Scripts/Framework/Camera/CameraController.cs)
 
 ## Rick
 ### Enemy AI
@@ -44,29 +48,19 @@ Camera controller
 [Walking state](Assets/Scripts/NPC/WalkingState.cs)<br>
 [Grid](Assets/Scripts/NPC/Grid.cs)<br>
 [Waypoint](Assets/Scripts/NPC/Waypoint.cs)<br>
-### Audio systems
-[Music controller](Assets/Scripts/Framework/Audio/MusicController.cs)<br>
-[Soundeffect system](Assets/Scripts/Framework/Audio/SoundEffectSystem.cs)
-### Future feature:
-Unkown
-
-## Joost
-### Future feature:
-Unkown
 
 ## Mark
-### Path finding
+### Grid system & enemy path finding
 [Grid](Assets/Scripts/NPC/Grid.cs)<br>
 [Waypoint](Assets/Scripts/NPC/Waypoint.cs)<br>
-### Future feature:
-Grid creater
+[Walking state](Assets/Scripts/NPC/WalkingState.cs)<br>
+### Toolbox
+https://github.com/BNS-MarkUlrich/MarksMagicToolbox
 
 ## Mikey
 ### Player art
 Image coming soon
-### Future feature:
-Unkown
 
 ## Ruud
-### Future feature:
-Unkown - music
+### Music:
+Coming soon
