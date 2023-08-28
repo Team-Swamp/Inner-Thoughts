@@ -14,7 +14,12 @@ A unity game project made for the Brackeys gamejam 2023.2. It's a pixel top-down
 [Player shooting](Assets/Scripts/Player/PlayerShooting.cs)<br>
 [Bullet](Assets/Scripts/Framework/Bullet.cs)<br>
 [Mouse position](Assets/Scripts/Player/MousePosition.cs)<br>
-Images for bullets coming soon
+Small bullet:
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/9a88b33f-3073-4442-9812-5fbfd07f6efc" width=10%></img>
+Big bullet:
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/216373bd-6d46-414f-9d27-0d4f920be590" width=10%></img>
+
+
 ### Pick-up buffs
 [Interface pickup](Assets/Scripts/Framework/Pick-ups/IPickup.cs)<br>
 [Health buff](Assets/Scripts/Framework/Pick-ups//Buffs/HealthBuff.cs)<br>
@@ -28,7 +33,12 @@ Image coming soon
 ### Player animation controller
 [Animation controller](Assets/Scripts/Player/AnimationController.cs)<br>
 ### Enemies art (eye balls)
-Images coming soon
+There are red and pink color variants.<br>
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/ae96af9a-3fd4-4132-a3e2-a2807dbf21fc" width=20%></img>
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/f16ac837-f21b-48ca-9eee-6f51fb975253" width=20%></img>
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/5592cc9d-4d72-4ff2-b693-78829b8723cd" width=20%></img>
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/359731b4-5738-48db-aec2-41e424a93496" width=20%></img>
+
 
 ### Future feature:
 Health indicator
