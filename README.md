@@ -1,5 +1,8 @@
 # Brackeys-Gamejam-2023.2
-A unity game project made for the Brackeys gamejam 2023.2. It's a pixel top-down rogue-like (maybe a rogue-light). 
+A unity game project made for the Brackeys gamejam 2023.2, with the theme "Diving Deeper".<br>
+[20th of August 2023 - 27th of August 2023]<br><br>
+
+It's a pixel top-down rogue-like (maybe a rogue-light).
 
 ## Team
 * Bas: project lead, game developer & game artist
@@ -14,22 +17,20 @@ A unity game project made for the Brackeys gamejam 2023.2. It's a pixel top-down
 [Player shooting](Assets/Scripts/Player/PlayerShooting.cs)<br>
 [Bullet](Assets/Scripts/Framework/Bullet.cs)<br>
 [Mouse position](Assets/Scripts/Player/MousePosition.cs)<br>
-Small bullet:
-<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/9a88b33f-3073-4442-9812-5fbfd07f6efc" width=10%></img>
-Big bullet:
-<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/216373bd-6d46-414f-9d27-0d4f920be590" width=10%></img>
-
-
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/ebeae444-a770-4a3b-9f39-7f4199a9531a" width=20%></img>
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/c22be608-b828-4a62-a8d9-f07756a7c86b" width=20%></img>
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/9cb46349-df19-4f8b-8d00-2cddd10b230f" width=20%></img>
 ### Pick-up buffs
 [Interface pickup](Assets/Scripts/Framework/Pick-ups/IPickup.cs)<br>
 [Health buff](Assets/Scripts/Framework/Pick-ups//Buffs/HealthBuff.cs)<br>
 [Speed buff](Assets/Scripts/Framework/Pick-ups//Buffs/SpeedBuff.cs)<br>
 [Gun buff](Assets/Scripts/Framework/Pick-ups//Buffs/GunBuff.cs)<br>
-Image coming soon
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/7ba1ff5f-22f3-40f2-a21b-9931c770d2bd" width=20%></img>
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/23664cf5-b67f-4d4e-b820-f8bf6b3a06e9" width=20%></img>
 ### Room system
 [Room manager](Assets/Scripts/Framework/Rooms/RoomManager.cs)<br>
 ### Environment tile set
-Image coming soon
+<img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/edb0bc85-9690-4eca-9db6-30f74b1e2e17" width=40%></img>
 ### Player animation controller
 [Animation controller](Assets/Scripts/Player/AnimationController.cs)<br>
 ### Enemies art (eye balls)
@@ -39,9 +40,9 @@ There are red and pink color variants.<br>
 <img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/5592cc9d-4d72-4ff2-b693-78829b8723cd" width=20%></img>
 <img src="https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/359731b4-5738-48db-aec2-41e424a93496" width=20%></img>
 
-
 ### Future feature:
-Health indicator
+* Hitting indicator
+* Health indicator
 
 ## Tatum
 ### Player movement
@@ -69,7 +70,9 @@ https://github.com/BNS-MarkUlrich/MarksMagicToolbox
 
 ## Mikey
 ### Player art
-Image coming soon
+![MovementCamera](https://github.com/Team-Swamp/Inner-Thoughts/assets/70578065/f3a0a0c6-d4fd-4550-859c-c3dc99879c32)
+### Music:
+Coming soon
 
 ## Ruud
 ### Music:
