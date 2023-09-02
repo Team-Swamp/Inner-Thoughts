@@ -42,7 +42,6 @@ There are red and pink color variants.<br>
 
 ### Future feature:
 * Hitting indicator
-* Health indicator
 
 ## Tatum
 ### Player movement
@@ -52,6 +51,8 @@ There are red and pink color variants.<br>
 [Soundeffect system](Assets/Scripts/Framework/Audio/SoundEffectSystem.cs)
 ### Camera controller:
 [Camera controller](Assets/Scripts/Framework/Camera/CameraController.cs)
+### Future feature:
+* Hitting indicator
 
 ## Rick
 ### Enemy AI
