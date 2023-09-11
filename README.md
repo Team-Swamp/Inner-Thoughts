@@ -2,7 +2,7 @@
 A unity game project made for the Brackeys gamejam 2023.2, with the theme "Diving Deeper".<br>
 [20th of August 2023 - 27th of August 2023]<br><br>
 
-It's a pixel top-down rogue-like (maybe a rogue-light).
+It's a pixel top-down rogue-like.
 
 ## Team
 * Bas: project lead, game developer & game artist
